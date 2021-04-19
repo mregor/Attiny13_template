@@ -5,7 +5,7 @@ PROJECT = main
 # Тип чипа для AVR GCC и частота ядра. 
 # https://gcc.gnu.org/onlinedocs/gcc/AVR-Options.html
 GCC_MCU = avr25
-CLOCK_HZ   = 1000000
+CLOCK_HZ   = 1200000
 
 # Опции для AVRDUDE.
 # https://ph0en1x.net/77-avrdude-full-howto-samples-options-gui-linux.html
