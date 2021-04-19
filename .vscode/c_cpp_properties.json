@@ -1,0 +1,26 @@
+{
+    "configurations": [
+        {
+            "name": "arm_c_cpp_properties",
+            "compilerPath": "/usr/bin/avr-gcc",
+            "includePath": [
+				"${workspaceRoot}/include",
+				"${workspaceRoot}/src",
+                "/usr/avr/include/avr",
+                ""
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "/usr/avr/include/avr",
+                    "/usr/avr/include",
+                    ""
+                ]
+            },
+            "cStandard": "c99",
+            "cppStandard": "c++17",
+			"intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}
