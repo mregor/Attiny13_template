@@ -27,7 +27,7 @@ $(PROGRAM).hex: $(PROGRAM).elf
 
 flash: $(PROGRAM).hex
 	@printf "  FLASH   $(PROGRAM).hex\n"
-	$(Q)avrdude -c usbasp -P /dev/ttyUSB0 -p t13 -U flash:w:$(PROGRAM).hex
+	$(Q)avrdude -c usbasp -P /dev/ttyUSB0 -p t13 -B 2000 -U flash:w:$(PROGRAM).hex
 
 clean:
 	@printf "  CLEAN   $(subst $(shell pwd)/,,$(OBJS))\n"

@@ -12,17 +12,32 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
-#define LED_BIT _BV(PB4)
+#define LED_BIT1 _BV(PB4)
+#define LED_BIT2 _BV(PB3)
 
 int main()
 {
-	DDRB |= LED_BIT; // OUTPUT
+	uint8_t i = 0;
+	DDRB |= (LED_BIT1 | LED_BIT2); // OUTPUT
 
 	while (1)
 	{
-		PORTB |= LED_BIT; // HIGH
-		_delay_ms(1000);
-		PORTB &= ~LED_BIT; // LOW
-		_delay_ms(1000);
+		for(i=0; i<3; i++)
+		{
+			PORTB |= LED_BIT1;
+			_delay_ms(70);
+			PORTB &= ~LED_BIT1;
+			_delay_ms(70);
+		}
+		_delay_ms(150);
+
+		for(i=0; i<3; i++)
+		{
+			PORTB |= LED_BIT2;
+			_delay_ms(70);
+			PORTB &= ~LED_BIT2;
+			_delay_ms(70);
+		}
+		_delay_ms(150);
 	}
 }
