@@ -15,7 +15,7 @@ endif
 	@printf "  CC      $(subst $(shell pwd)/,,$(@))\n"
 	$(Q)$(CC) $(CFLAGS) -o $@ -c $<
 
-all: $(PROGRAM).hex
+all: $(PROGRAM).hex size
 
 $(PROGRAM).elf: $(PROGRAM).o
 	@printf "  LD      $(subst $(shell pwd)/,,$(@))\n"
@@ -28,6 +28,9 @@ $(PROGRAM).hex: $(PROGRAM).elf
 flash: $(PROGRAM).hex
 	@printf "  FLASH   $(PROGRAM).hex\n"
 	$(Q)avrdude -c usbasp -P /dev/ttyUSB0 -p t13 -B 2000 -U flash:w:$(PROGRAM).hex
+
+size:
+	$(Q)avr-size --mcu=attiny13a --format=avr main.elf
 
 clean:
 	@printf "  CLEAN   $(subst $(shell pwd)/,,$(OBJS))\n"
