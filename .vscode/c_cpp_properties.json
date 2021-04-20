@@ -4,8 +4,6 @@
             "name": "arm_c_cpp_properties",
             "compilerPath": "/usr/bin/avr-gcc",
             "includePath": [
-				"${workspaceRoot}/include",
-				"${workspaceRoot}/src",
                 "/usr/avr/include/avr",
                 ""
             ],
